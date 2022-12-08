@@ -1,18 +1,45 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
-
-<head>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/style.css">
-    <title></title>
-</head>
+    <title>Weather Wear | Outfit Based on Weather</title>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
+    <!--Weather Form starts here-->
+    <div class="city-input">
+      <div class="head">Weather to Wear</div>
+      <p class="paragraph">Clothing recommendation based on the weather</p>
+      <input
+        type="text"
+        placeholder="Enter a Location"
+        class="input"
+        spellcheck="false"
+      />
+      <button placeholder="submit" id="add"></button>
+      <!---Divider placed here for current location finder-->
+      <div class="separator"></div>
+      <button class="detect-btn">
+        <img src="./assets/images/arrow.svg" alt="current location" /> Use
+        current location
+      </button>
+    </div>
 
-<body>
+    <!---This is where the response go-->
+    <div class="details-area inactive">
+      <div class="weathericon"></div>
+      <div class="details">
+        <div class="temp"></div>
+        <div class="city-name"></div>
+        <div class="extras">
+          <div class="feels-like"></div>
+          <div class="humidity"></div>
+        </div>
+      </div>
+    </div>
 
-<script scr="./assets/script.js"></script>
-</body>
-
+    <script src="./assets/script.js"></script>
+  </body>
 </html>
