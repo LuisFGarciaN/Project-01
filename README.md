@@ -6,7 +6,7 @@
 ```
 As a user
 I WANT to check the weather of ANY location
-SO THAT I can get a clothing recommendation based on the weather
+SO THAT I can get a clothing recommendations based on the weather
 ```
 ## Acceptance Criteria
 
