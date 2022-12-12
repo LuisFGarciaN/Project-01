@@ -18,6 +18,6 @@ When entering invalid location, an error message on the form will be presented.
 
 ```
 ## Deployed Application
-```
 [Deployed Application](https://zellyb.github.io/Weather-Wear/)
-```
+
+
