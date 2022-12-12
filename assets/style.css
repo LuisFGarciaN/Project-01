@@ -89,6 +89,7 @@ body {
 .details-area {
   width: 400px;
   padding: 20px;
+  border: solid;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
