@@ -75,7 +75,7 @@ body {
   font-size: 1em;
   text-decoration: underline;
   border: none;
-  padding: 0;
+  padding: 10;
   color: #000000;
   cursor: pointer;
   border-radius: 5px;
@@ -92,13 +92,6 @@ body {
   background-color: #ffffff;
   display: flex;
   justify-content: center;
-}
-.details-area .image {
-  width: 50%;
-  background-image: url("");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
 }
 
 .details-area .details {
@@ -139,20 +132,20 @@ body {
 /* Mobile */
 @media (max-width: 480px) {
   body {
-    background-color: #bff6e3;
+    background-color: #ffffff;
   }
 }
 
 /* Tablet */
 @media (min-width: 481px) and (max-width: 1024px) {
   body {
-    background-color: #bff6e3;
+    background-color: #ffffff;
   }
 }
 
 /* Desktop */
 @media (min-width: 1025px) {
   body {
-    background-color: #bff6e3;
+    background-color: #ffffff;
   }
 }
