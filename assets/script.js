@@ -7,8 +7,9 @@ const city_name = document.querySelector(".city-name");
 const feels_like = document.querySelector(".feels-like");
 const humidity = document.querySelector(".humidity");
 const rep = document.querySelector(".reporter");
+const infoTxt = document.querySelector(".info-txt");
 
-
+// API ID here
 let api;
 let apiId = "6a6ee6b3ca4d66a2761e76f3627ca518";
 let temperature;
@@ -20,8 +21,28 @@ input.addEventListener("keydown", (e) => {
     fetchData();
   }
 });
+detect_btn.addEventListener("click", () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+  } else {
+    alert("Oops!! Sorry try again.");
+  }
+});
+function onSuccess(pos) {
+  const { latitude, longitude } = pos.coords;
+  api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiId}`;
+  fetchData();
+}
 
+function onError(error) {
+  infoTxt.innerText = error.message;
+  infoTxt.classList.add("error");
+}
+
+// fetching api
 function fetchData() {
+  infoTxt.innerText = "Getting weather details...";
+  infoTxt.classList.add("pending");
   fetch(api)
     .then((res) => res.json())
     .then((result) => {
@@ -29,23 +50,24 @@ function fetchData() {
       fetchUser();
     });
 }
-
+// reporter API
 function fetchUser() {
-  randomReporter = Math.floor(Math.random() * 10) + 1
+  randomReporter = Math.floor(Math.random() * 10) + 1;
   fetch(`https://jsonplaceholder.typicode.com/users/${randomReporter}`)
-  .then(response => response.json())
-  .then(json => reporterDetails(json.name))
+    .then((response) => response.json())
+    .then((json) => reporterDetails(json.name));
 }
 
-function details(info) { 
+function details(info) {
+  infoTxt.classList.replace("pending", "error");
   if (info.cod == "404") {
-    alert(`${input.value} isn't a valid name`);
-    return;
+    infoTxt.innerText = `${input.value} isn't a valid name`;
+  } else {
+    infoTxt.classList.remove("pending", "error");
   }
   if (details_area.classList.contains("inactive")) {
     details_area.classList.replace("inactive", "active");
   }
-
   temperature = parseInt(info.main.temp);
   feelsLikeTemp = parseInt(info.main.feels_like);
 
@@ -58,37 +80,19 @@ function details(info) {
 function reporterDetails(reporter) {
   //TODO write if logic for temperature change strings
   let reporterResponse;
-  temperature= feelsLikeTemp
-  if(temperature >=80){
-    reporterResponse = 'it is hot out today. Wear shorts.'
-  } else if(temperature < 80 && temperature >= 65){
-    reporterResponse = 'it is warm out today. Wear short sleeves.'
-  } else if(temperature < 65 && temperature >=45){
-    reporterResponse = 'it is cool out today. Wear Fleece.'
-  } else if(temperature < 45 && temperature >= 25){
-    reporterResponse = 'it is cold out today. Wear a light to medium coat.'
+  temperature = feelsLikeTemp;
+  if (temperature >= 80) {
+    reporterResponse = "<br>it is hot out today.<br> Wear shorts.";
+  } else if (temperature < 80 && temperature >= 65) {
+    reporterResponse = "<br>it is warm out today.<br> Wear short sleeves.";
+  } else if (temperature < 65 && temperature >= 45) {
+    reporterResponse = "<br>it is cool out today. <br>Wear Fleece.";
+  } else if (temperature < 45 && temperature >= 25) {
+    reporterResponse =
+      "<br>it is cold out today.<br> Wear a light to medium coat.";
   } else {
-    reporterResponse = 'it is freezing out today. Wear a winter jacket.'
+    reporterResponse =
+      "<br>it is freezing out today.<br> Wear a winter jacket.";
   }
-  rep.innerHTML = `Reporter ${reporter} says ${reporterResponse}`
-
-}
-
-
-detect_btn.addEventListener("click", () => {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
-  } else {
-    alert("Oops!! Sorry try again.");
-  }
-});
-
-function onSuccess(pos) {
-  const { latitude, longitude } = pos.coords;
-  api = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${apiId}`;
-  fetchData();
-}
-
-function onError(error) {
-  alert(error.message);
+  rep.innerHTML = `Reporter ${reporter} says ${reporterResponse}`;
 }
