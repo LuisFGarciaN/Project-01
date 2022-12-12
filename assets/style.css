@@ -6,7 +6,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 body {
-  height: 130vh;
+  height: 120vh;
   background-repeat: no-repeat;
   background: linear-gradient(-45deg, #ffffff, #ffffff);
   display: flex;
@@ -78,7 +78,7 @@ body {
   padding: 10;
   color: #000000;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 0px;
   background-color: transparent;
   text-align: center;
 }
@@ -90,6 +90,8 @@ body {
   width: 400px;
   padding: 20px;
   border: solid;
+  border-color: rgb(207, 207, 207);
+  border-radius: 10px;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
