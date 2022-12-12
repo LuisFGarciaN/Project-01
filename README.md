@@ -16,4 +16,8 @@ When the current location is clicked, geolocation is being used, and the weather
 When a location is entered, a pending text should be presented until the response displays.
 When entering invalid location, an error message on the form will be presented.
 
+```
+## Deployed Application
+```
 [Deployed Application](insert deploy link here)
+```
