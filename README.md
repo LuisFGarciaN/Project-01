@@ -17,6 +17,14 @@ When a location is entered, a pending text should be presented until the respons
 When entering invalid location, an error message on the form will be presented.
 
 ```
+## Screen Shot
+
+![](./assets/images/sc1.png)
+![](./assets/images/sc2.png)
+![](./assets/images/sc3.png)
+
+```
+```
 ## Deployed Application
 [Deployed Application](https://zellyb.github.io/Weather-Wear/)
 
