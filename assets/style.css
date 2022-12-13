@@ -1,0 +1,151 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  height: 130vh;
+  background-repeat: no-repeat;
+  background: linear-gradient(-45deg, #e0dada, #f1efd2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/*Creating the form */
+.city-input {
+  width: 500px;
+  padding: 20px;
+  background-color: transparent;
+  text-align: center;
+}
+.city-input .head {
+  font-size: 3em;
+  font-weight: 600;
+  padding: 8px 0;
+  padding-left: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.city-input .paragraph {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #4b4b4b;
+}
+.city-input .info-txt {
+  display: none;
+  font-size: 1em;
+  padding: 12px 10px;
+  background-color: transparent;
+  color: #898787;
+  border-radius: 7px;
+}
+.info-txt.error {
+  display: block;
+  background-color: transparent;
+  color: #901111;
+  border: 1px solid;
+}
+.info-txt.pending {
+  display: block;
+  background-color: transparent;
+  color: #52ac7a;
+  border: 1px solid;
+}
+.city-input .input {
+  width: 100%;
+  outline: none;
+  text-align: center;
+  border: 0;
+  border-bottom: 1px solid black;
+  font-size: 1.5em;
+  padding: 2px 0;
+  margin-top: 8px;
+  margin-bottom: 0;
+  background-color: transparent;
+  display: flex;
+}
+
+/*current location button */
+.city-input .detect-btn {
+  width: 100%;
+  font-size: 1em;
+  text-decoration: underline;
+  border: none;
+  padding: 10;
+  color: #000000;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: transparent;
+  text-align: center;
+}
+.city-input .detect-btn:hover {
+  background-color: #52ac7a;
+}
+/* the response */
+.details-area {
+  width: 400px;
+  padding: 20px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.details-area .details {
+  width: 50%;
+}
+.details-area .temp {
+  font-size: 4em;
+  font-weight: 600;
+  text-align: center;
+}
+.details-area .city-name {
+  font-size: 1.2em;
+  font-weight: 400;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #838383;
+  text-align: center;
+}
+
+.details-area .extras {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 1em 0;
+}
+.details-area .reporter {
+  font-size: 1em;
+  font-weight: 200;
+  text-align: center;
+}
+/* showing and hiding info */
+.active {
+  display: flex;
+}
+.inactive {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  body {
+    background-color: #ffffff;
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+  body {
+    background-color: #ffffff;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  body {
+    background-color: #ffffff;
+  }
+}
