@@ -5,8 +5,8 @@
 ## User Story
 ```
 As a user
-I WANT to check the weather of ANY location
-SO THAT I can get a clothing recommendations based on the weather
+I want to check the weather of ANY location
+So That I can get a clothing recommendations based on the weather
 ```
 ## Acceptance Criteria
 
